@@ -1401,7 +1401,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         NSRange newRange = NSMakeRange(0, 0);
         newRange.location = _selectedTextRange.start.offset + text.length;
         _selectedTextRange = [YYTextRange rangeWithRange:newRange];
-        if (notify) [_inputDelegate selectionDidChange:self];
+//        if (notify) [_inputDelegate selectionDidChange:self];
     } else {
         if (range.asRange.length != text.length) {
             if (notify) [_inputDelegate selectionWillChange:self];
@@ -1437,8 +1437,8 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
                     _selectedTextRange = [YYTextRange rangeWithRange:newRange];
                 }
             }
-            _selectedTextRange = [self _correctedTextRange:_selectedTextRange];
-            if (notify) [_inputDelegate selectionDidChange:self];
+//            _selectedTextRange = [self _correctedTextRange:_selectedTextRange];
+//            if (notify) [_inputDelegate selectionDidChange:self];
         }
     }
     if (notify) [_inputDelegate textWillChange:self];
@@ -1502,7 +1502,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         if (![oldTextRange isEqual:newTextRange]) {
             [_inputDelegate selectionWillChange:self];
             _selectedTextRange = newTextRange;
-            [_inputDelegate selectionDidChange:self];
+//            [_inputDelegate selectionDidChange:self];
         }
         return textChanged;
     }
@@ -2148,7 +2148,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     [self _parseText];
     _selectedTextRange = [YYTextRange rangeWithRange:NSMakeRange(0, _innerText.length)];
     [_inputDelegate textDidChange:self];
-    [_inputDelegate selectionDidChange:self];
+//    [_inputDelegate selectionDidChange:self];
     
     [self _setAttributedText:text];
     if (_innerText.length > 0) {
@@ -2698,7 +2698,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
             if (![_trackingRange isEqual:_selectedTextRange]) {
                 [_inputDelegate selectionWillChange:self];
                 _selectedTextRange = _trackingRange;
-                [_inputDelegate selectionDidChange:self];
+//                [_inputDelegate selectionDidChange:self];
                 [self _updateAttributesHolder];
                 [self _updateOuterProperties];
             }
@@ -2968,7 +2968,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     if (newRange.asRange.length > 0) {
         [_inputDelegate selectionWillChange:self];
         _selectedTextRange = newRange;
-        [_inputDelegate selectionDidChange:self];
+//        [_inputDelegate selectionDidChange:self];
     }
     
     [self _updateIfNeeded];
@@ -2982,7 +2982,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     _trackingRange = nil;
     [_inputDelegate selectionWillChange:self];
     _selectedTextRange = [YYTextRange rangeWithRange:NSMakeRange(0, _innerText.length)];
-    [_inputDelegate selectionDidChange:self];
+//    [_inputDelegate selectionDidChange:self];
     
     [self _updateIfNeeded];
     [self _updateOuterProperties];
@@ -3211,7 +3211,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
             [_inputDelegate selectionWillChange:self];
             _selectedTextRange = [YYTextRange rangeWithRange:effectiveRange];
             _selectedTextRange = [self _correctedTextRange:_selectedTextRange];
-            [_inputDelegate selectionDidChange:self];
+//            [_inputDelegate selectionDidChange:self];
             
             [self _updateOuterProperties];
             [self _updateSelectionView];
@@ -3252,7 +3252,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     [_inputDelegate selectionWillChange:self];
     _selectedTextRange = selectedTextRange;
     _lastTypeRange = _selectedTextRange.asRange;
-    [_inputDelegate selectionDidChange:self];
+//    [_inputDelegate selectionDidChange:self];
     
     [self _updateOuterProperties];
     [self _updateSelectionView];
@@ -3325,7 +3325,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         [_innerText removeDiscontinuousAttributesInRange:_markedTextRange.asRange];
     }
     
-    [_inputDelegate selectionDidChange:self];
+//    [_inputDelegate selectionDidChange:self];
     [_inputDelegate textDidChange:self];
     
     [self _updateOuterProperties];
