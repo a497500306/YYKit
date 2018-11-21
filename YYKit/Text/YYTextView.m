@@ -3326,7 +3326,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         [_innerText removeDiscontinuousAttributesInRange:_markedTextRange.asRange];
     }
     
-    //    [_inputDelegate selectionDidChange:self];
+    [_inputDelegate selectionDidChange:self];
     [_inputDelegate textDidChange:self];
     
     [self _updateOuterProperties];

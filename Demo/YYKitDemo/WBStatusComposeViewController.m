@@ -94,6 +94,7 @@
     _textView.textParser = [WBStatusComposeTextParser new];
     _textView.delegate = self;
     _textView.inputAccessoryView = [UIView new];
+    _textView.enablesReturnKeyAutomatically = true;
     
     WBTextLinePositionModifier *modifier = [WBTextLinePositionModifier new];
     modifier.font = [UIFont fontWithName:@"Heiti SC" size:17];
