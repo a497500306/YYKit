@@ -1658,7 +1658,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
     BOOL canUndo = [self _canUndo];
     BOOL canRedo = [self _canRedo];
     
-    UIViewController *ctrl = [self _getRootViewController];
+    UIViewController *ctrl = [self viewController];
     
     if (canUndo && canRedo) {
         if (kiOS8Later) {
