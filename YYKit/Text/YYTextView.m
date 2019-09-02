@@ -1769,7 +1769,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         NSString *preferred = [[NSBundle mainBundle] preferredLocalizations].firstObject;
         if (preferred.length == 0) preferred = @"English";
         NSString *canonical = [NSLocale canonicalLocaleIdentifierFromString:preferred];
-        if (canonical.length == 0) canonical = @"en";
+        if (canonical.length == 0) canonical = @"zh";
         strings = dic[canonical];
         if (!strings  && [canonical containsString:@"_"]) {
             NSString *prefix = [canonical componentsSeparatedByString:@"_"].firstObject;
