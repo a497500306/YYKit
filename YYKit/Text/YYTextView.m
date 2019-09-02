@@ -1726,7 +1726,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
 - (NSArray *)_localizedUndoStrings {
     static NSArray *strings = nil;
     static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
+//    dispatch_once(&onceToken, ^{
         NSDictionary *dic = @{
                               @"ar" : @[ @"إلغاء", @"إعادة", @"إعادة الكتابة", @"تراجع", @"تراجع عن الكتابة" ],
                               @"ca" : @[ @"Cancel·lar", @"Refer", @"Refer l’escriptura", @"Desfer", @"Desfer l’escriptura" ],
@@ -1769,14 +1769,14 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
         NSString *preferred = [[NSBundle mainBundle] preferredLocalizations].firstObject;
         if (preferred.length == 0) preferred = @"English";
         NSString *canonical = [NSLocale canonicalLocaleIdentifierFromString:preferred];
-        if (canonical.length == 0) canonical = @"zh";
+        if (canonical.length == 0) canonical = @"en";
         strings = dic[canonical];
         if (!strings  && [canonical containsString:@"_"]) {
             NSString *prefix = [canonical componentsSeparatedByString:@"_"].firstObject;
             if (prefix.length) strings = dic[prefix];
         }
-        if (!strings) strings = dic[@"zh"];
-    });
+        if (!strings) strings = dic[@"en"];
+//    });
     return strings;
 }
 
