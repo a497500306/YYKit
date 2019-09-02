@@ -1775,7 +1775,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
             NSString *prefix = [canonical componentsSeparatedByString:@"_"].firstObject;
             if (prefix.length) strings = dic[prefix];
         }
-        if (!strings) strings = dic[@"en"];
+        if (!strings) strings = dic[@"zh"];
     });
     return strings;
 }
