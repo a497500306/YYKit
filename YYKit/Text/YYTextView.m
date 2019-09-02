@@ -1764,7 +1764,7 @@ typedef NS_ENUM(NSUInteger, YYTextMoveDirection) {
                               @"zh_CN" : @[ @"取消", @"重做", @"重做键入", @"撤销", @"撤销键入" ],
                               @"zh_HK" : @[ @"取消", @"重做", @"重做輸入", @"還原", @"還原輸入" ],
                               @"zh_TW" : @[ @"取消", @"重做", @"重做輸入", @"還原", @"還原輸入" ],
-                              @"zh-Hans" : @[ @"取消", @"重做", @"重做輸入", @"還原", @"還原輸入" ]
+                              @"zh_Hans" : @[ @"取消", @"重做", @"重做键入", @"撤销", @"撤销键入" ]
                               };
         NSString *preferred = [[NSBundle mainBundle] preferredLocalizations].firstObject;
         if (preferred.length == 0) preferred = @"English";
