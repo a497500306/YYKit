@@ -673,6 +673,8 @@ dispatch_semaphore_signal(_lock);
         if (size.height < 0) size.height = 0;
         size.width = ceil(size.width);
         size.height = ceil(size.height);
+        if ( size.width > container.size.width ) size.width = container.size.width;
+        if ( size.height > container.size.height ) size.height = container.size.height;
         textBoundingSize = size;
     }
     
